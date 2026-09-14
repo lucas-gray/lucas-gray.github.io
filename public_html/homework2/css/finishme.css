@@ -20,7 +20,6 @@ body {
     margin-left: 100px;
     margin-right: 100px;
     margin-top: 20px;
-
 }
 
 /* Make the h1 element centered and colored 'firebrick' red. */
@@ -35,6 +34,21 @@ Make the width of the image 75% smaller, and center it.
 (To center an image, you can use the margin:auto trick from 
 above, but you will also need to set the display to block.)  */
 
+img {
+    border-radius: 50%;
+    width: 75%;
+    margin: auto;
+    display: block;
+}
+
 /* The "special" class should have a background color of gold.
 Just the paragraph marked "special" should have double the 
 relative font size (ie: 2rem) as well the gold bkgd. */
+
+.special {
+    background-color: gold;
+}
+
+p.special {
+    font-size: 2rem;
+}
