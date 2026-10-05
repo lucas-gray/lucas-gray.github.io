@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 70%;
+    margin: 20px auto;
+    background-color: gainsboro;
+}
+
+form {
+    background-color: white;
+    padding: 2em;
+}
+
+fieldset {
+    padding: 20px;
+    margin: 20px;
+}
+
+input[type=submit] {
+    font-size: 1.2em;
+    padding: 1em;
+    margin: 20px;
+}
+
+select {
+    width: 10em
+}
+
+li>b:hover {
+    color: blue;
+    cursor: pointer;
+}

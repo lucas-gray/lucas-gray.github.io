@@ -1,0 +1,133 @@
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunch Form</title>
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body>
+
+    <h1>Grocery Form</h1>
+
+    <form id="exForm" action="http://csci331vm.cs.montana.edu/~h48c334/formviewer/form-viewer.php" method="GET">
+
+        <fieldset>
+            <legend>Choose Groceries</legend>
+
+            <input type="checkbox" name="eggs" id="cb1">
+            <label for="cb1">Eggs</label><br>
+
+            <input type="checkbox" name="bagels" id="cb2">
+            <label for="cb2">Bagels</label><br>
+
+            <input type="checkbox" name="coffee" id="cb3">
+            <label for="cb3">Coffee</label><br>
+
+            <input type="checkbox" name="bananas" id="cb4">
+            <label for="cb4">Bananas</label><br>
+
+        </fieldset>
+        <fieldset>
+            <legend>Choose Milk</legend>
+
+            <input type="radio" name="milk" id="rb1" value="reduced-fat">
+            <label for="rb1">Reduced Fat Milk (2%)</label><br>
+
+            <input type="radio" name="milk" id="rb2" value="almond">
+            <label for="rb2">Almond Milk</label><br>
+
+            <input type="radio" name="milk" id="rb3" value="oat">
+            <label for="rb3">Oat Milk</label><br>
+
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Non-food Items</legend>
+            <label for="tp">Toilet Paper:</label>
+            <select name="tp" id="tp">
+                <optgroup label="Charmin">
+                    <option value="one-ply">1 Ply</option>
+                    <option value="two-ply">2 Ply</option>
+                    <option value="three-ply">3 Ply</option>
+                </optgroup>
+                <optgroup label="Scott">
+                    <option value="one-ply">1 Ply</option>
+                    <option value="two-ply">2 Ply</option>
+                    <option value="three-ply">3 Ply</option>
+                </optgroup>
+                <optgroup label="Cottonelle">
+                    <option value="one-ply">1 Ply</option>
+                    <option value="two-ply">2 Ply</option>
+                    <option value="three-ply">3 Ply</option>
+                </optgroup>
+            </select><br><br>
+
+            <label for="other">Other Items:</label>
+            <select name="other[]" id="other" size="2" multiple="">
+                <option value="hand-soap">Hand Soap</option>
+                <option value="paper-towels">Paper Towels</option>
+                <option value="vitamins">Vitamins</option>
+            </select><br>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Contact Information</legend>
+            <label for="email">Enter your email address:</label>
+
+            <input type="email" id="email" pattern=".+@example\.com" size="30" required />
+
+            <p>We will contact you when your order is ready for pickup!</p>
+
+        </fieldset>
+        <br>
+        <input type="submit" value="Order Groceries">
+    </form>
+
+
+
+    <script>
+        // get the first (and only) form element; get it's value
+        const form = document.querySelector("form");
+
+        // set GET or POST options
+        const radioButtons = document.querySelectorAll('input[name="send_method"]');
+        const method = document.getElementById("method");
+        let selectedValue;
+        const getOrPost = document.getElementById("getOrPost")
+        getOrPost.addEventListener("click", () => {
+            radioButtons.forEach(radioButton => {
+                if (radioButton.checked) {
+                    method.innerHTML = radioButton.value;
+                    form.setAttribute("method", radioButton.value)
+                }
+            })
+        })
+
+
+
+        // get the input box element
+        const fvbox = document.getElementById("fv");
+        // on input, evaluate task...
+        fvbox.addEventListener("input", handleInput);
+
+        function handleInput() {
+            // if it's there, change form action to input box string
+            if (fvbox.value != "") {
+                form.setAttribute("action", fvbox.value)
+            }
+            else {
+                fvdefault = "form-viewer.php";
+                form.setAttribute("action", fvdefault);
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>
