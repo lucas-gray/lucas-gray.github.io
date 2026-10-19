@@ -1,0 +1,7 @@
+body { font-family: sans-serif; margin: 2rem; color: #222; }
+table { border-collapse: collapse; margin: 1rem 0; }
+th, td { border: 1px solid #777; padding: 0.6rem; text-align: left; }
+th { background: #eee; }
+button { padding: 0.5rem 1rem; cursor: pointer; }
+.error { color: #9b1515; }
+button:focus-visible, input:focus-visible { outline: 3px solid #185c9d; outline-offset: 3px; }

@@ -23,3 +23,6 @@ Gemfile.lock
 __MACOSX/
 .AppleDouble
 .LSOverride
+
+# Class secrets
+/private/fan-db-config.php
