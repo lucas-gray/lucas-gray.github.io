@@ -49,12 +49,14 @@ $message = 'Starter: database access and API requests are not implemented yet.';
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Build a Fan Database</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <h1>Build a Fan Database</h1>
     <!-- The short PHP echo tag prints a value. escapeHtml() displays it as text. -->
@@ -83,4 +85,5 @@ $message = 'Starter: database access and API requests are not implemented yet.';
         </tbody>
     </table>
 </body>
+
 </html>
